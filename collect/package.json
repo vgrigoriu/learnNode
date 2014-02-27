@@ -6,5 +6,8 @@
   "author": {
     "name": "Victor GRIGORIU",
     "email": "vgrigoriu@gmail.com"
+  },
+  "dependencies": {
+    "bl": "~0.6.0"
   }
 }

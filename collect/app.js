@@ -1,20 +1,16 @@
 "use strict";
 
 var http = require('http');
+var bl = require('bl');
 
-var characterCount = 0;
-var serverResponse = '';
+var url = process.argv[2];
 
-var response = http.get(process.argv[2], function(response) {
-    response.setEncoding('utf8');
+var response = http.get(url, function(response) {
+    response.pipe(bl(function(err, data) {
+        if (err) return console.error('Error getting ' + url, err);
 
-    response.on('data', function(chunk) {
-        characterCount += chunk.length;
-        serverResponse += chunk;
-    });
-
-    response.on('end', function() {
-        console.log(characterCount);
-        console.log(serverResponse);
-    });
+        var content = data.toString();
+        console.log(content.length);
+        console.log(content);
+    }));
 });
