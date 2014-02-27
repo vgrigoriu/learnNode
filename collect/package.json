@@ -1,0 +1,10 @@
+{
+  "name": "collect",
+  "version": "0.0.1",
+  "description": "collect",
+  "main": "app.js",
+  "author": {
+    "name": "Victor GRIGORIU",
+    "email": "vgrigoriu@gmail.com"
+  }
+}
